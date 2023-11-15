@@ -1,4 +1,4 @@
-const ARTWORK_IMAGES = ["petruk", "togog", "gareng", "bagong", "semar"];
+const ARTWORK_IMAGES = ["petruk", "gareng", "bagong", "semar", "togog", "bilung"];
 const ARTWORK_COLORS = ["#ff5500", "#e6002e", "#7150CE", "#EEBB00", "#2D9ED7"];
 
 // Elements
