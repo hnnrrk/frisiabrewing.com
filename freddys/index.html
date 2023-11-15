@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Label Maker | Freddy's Brewing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <section class="label">
+    <div class="label-info">
+      <svg class="label-logo">
+        <use href="./logo.svg#freddys-logo"></use>
+      </svg>
+
+      <div>
+        <h1 class="label-name" contenteditable="true" spellcheck="false">
+          quite
+          snazzy
+        </h1>
+        <h3 class="label-style" contenteditable="true" spellcheck="false">
+          European Pale Lager
+        </h3>
+      </div>
+
+      <div>
+        <p class="label-abv">
+          <strong contenteditable="true" spellcheck="false">5</strong><strong>%</strong>
+          alcohol by vol.
+        </p>
+        <p class="label-volume">
+          <strong>250 cL</strong> (approx. 4 ½ pints).
+        </p>
+        <p class="label-location">
+          brewed in <strong>Brisbane</strong>.
+        </p>
+      </div>
+    </div>
+    <div class="label-artwork">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </section>
+
+  <form class="form">
+    <input class="form-input" type="color" name="label-main-color" placeholder="Main colour" value="#005e23" />
+    <input class="form-input" type="file" name="label-artwork" accept="image/*" />
+  </form>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

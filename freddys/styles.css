@@ -1,0 +1,171 @@
+:root {
+  --main-color: #87c80e;
+  --secondary-color: #4d4d4d;
+  --shadow: 0 0 .1em #000c, 0 0 1em #0004;
+  --focus-color: var(--main-color, limegreen);
+}
+
+body {
+  display: grid;
+  place-content:center;
+  background: linear-gradient(hsl(0, 0%, 80%), hsl(0, 0%, 82%));
+  color: #4d4d4d;
+  min-height: 100vh;
+  font-size: 1.5vw;
+  font-family: 'Poppins', 'Avant Garde', sans-serif;
+  perspective: 100vw;
+}
+
+.label {
+  position: relative;
+  aspect-ratio: 1.54545;
+  background-color: white;
+  height: 50vw;
+  margin: 1em;
+  border-radius: .4em;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  [contenteditable="true"] {
+    border: 2px dashed transparent;
+    border-radius: 2px;
+    transition: border-color .2s linear, box-shadow .2s linear;;
+  }
+
+  &:hover [contenteditable="true"] {
+    border: 2px dashed #0005;
+
+    &:hover {
+      border-color: var(--focus-color);
+    }
+  }
+
+  .label-info {
+    display: grid;
+    align-content: space-between;
+    text-align: left;
+    max-width: 30%;
+    min-height: 100%;
+    padding-block: 1em;
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+
+    .label-logo {
+      width: 70%;
+      height: 3em;
+      margin-inline: auto;
+      fill: var(--main-color);
+    }
+
+    .label-name {
+      font-size: 3em;
+      line-height: 1;
+      margin-bottom: 0;
+    }
+
+    .label-style {
+      font-size: 1.5em;
+      line-height: 1;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--main-color);
+    }
+
+    .label-abv,
+    .label-volume,
+    .label-location {
+      opacity: 0.8;
+    }
+  }
+
+  .label-artwork {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .label-artwork .left,
+  .label-artwork .right {
+    width: 33%;
+    background-image: url('./artwork/semar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .label-artwork .left {
+    background-position: left;
+    transform: rotateZ(180deg);
+    background-blend-mode: screen;
+    background-color: var(--main-color);
+    outline: 1px solid white;
+  }
+  .label-artwork .right {
+    background-position: left;
+  }
+}
+
+p {
+  margin-block: .5em;
+}
+
+.form {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0.5em;
+  background-color: white;
+  box-shadow: var(--shadow);
+
+  .form-input {
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  .form-input[type="color"] {
+    cursor: pointer;
+    padding: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .form-input[type="file"] {
+    cursor: pointer;
+  }
+}
+
+:focus {
+  outline: 1px solid white;
+  box-shadow: 0 0 0 4px var(--focus-color);
+  transition: box-shadow .2s linear;
+}
+
+/*
+.label {
+  transform: rotateX(35deg) rotateY(5deg) rotateZ(0deg) translateX(0) scale(.8);
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform .5s ease, margin .5s ease;
+
+  &:hover,
+  &:focus-within {
+    transform: rotateX(0) rotateY(0) rotateZ(0) scale(1);
+  }
+}
+*/
