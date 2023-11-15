@@ -2,7 +2,7 @@
   --main-color: #87c80e;
   --secondary-color: #4d4d4d;
   --shadow: 0 0 .1em #000c, 0 0 1em #0004;
-  --focus-color: var(--main-color, limegreen);
+  --focus-color: #015fcc;
 }
 
 body {
@@ -25,30 +25,17 @@ body {
   box-shadow: var(--shadow);
   overflow: hidden;
 
-  [contenteditable="true"] {
-    border: 2px dashed transparent;
-    border-radius: 2px;
-    transition: border-color .2s linear, box-shadow .2s linear;;
-  }
-
-  &:hover [contenteditable="true"] {
-    border: 2px dashed #0005;
-
-    &:hover {
-      border-color: var(--focus-color);
-    }
-  }
-
   .label-info {
     display: grid;
     align-content: space-between;
     text-align: left;
-    max-width: 30%;
-    min-height: 100%;
+    width: 30%;
+    height: 100%;
     padding-block: 1em;
     margin-inline: auto;
     position: relative;
     z-index: 1;
+    word-wrap: break-word;
 
     .label-logo {
       width: 70%;
@@ -74,7 +61,7 @@ body {
     .label-abv,
     .label-volume,
     .label-location {
-      opacity: 0.8;
+      font-size: 1em;
     }
   }
 
@@ -90,17 +77,16 @@ body {
   .label-artwork .left,
   .label-artwork .right {
     width: 33%;
-    background-image: url('./artwork/semar.png');
+    background-image: url('./artwork/togog.png');
     background-size: cover;
     background-repeat: no-repeat;
   }
 
   .label-artwork .left {
     background-position: left;
-    transform: rotateZ(180deg);
+    transform: rotateY(180deg);
     background-blend-mode: screen;
     background-color: var(--main-color);
-    outline: 1px solid white;
   }
   .label-artwork .right {
     background-position: left;
@@ -149,9 +135,23 @@ p {
   }
 }
 
+[contenteditable="true"] {
+  border: 1px dashed transparent;
+  border-radius: 2px;
+  transition: border-color .2s linear, box-shadow .2s linear;
+}
+
+[contenteditable="true"]:hover {
+  border-color: #0005;
+}
+
+[contenteditable="true"]:focus {
+  border-color: var(--focus-color);
+}
+
 :focus {
   outline: 1px solid white;
-  box-shadow: 0 0 0 4px var(--focus-color);
+  box-shadow: 0 0 0 3px var(--focus-color);
   transition: box-shadow .2s linear;
 }
 
