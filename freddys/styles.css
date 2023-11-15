@@ -22,7 +22,6 @@ body {
   background-color: white;
   height: 50vw;
   margin: 1em;
-  border-radius: .4em;
   box-shadow: var(--shadow);
   overflow: hidden;
 

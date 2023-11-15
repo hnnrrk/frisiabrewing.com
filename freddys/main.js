@@ -29,7 +29,7 @@ artworkUpload.addEventListener("change", (event) => {
   }
 });
 
-const artworkImages = ["gareng", "bagong", "petruk", "semar"];
+const artworkImages = ["petruk", "togog", "gareng", "bagong", "semar"];
 const randomArtwork =
   artworkImages[Math.floor(Math.random() * artworkImages.length)];
 const backgroundImage = `url('./artwork/${randomArtwork}.png')`;
